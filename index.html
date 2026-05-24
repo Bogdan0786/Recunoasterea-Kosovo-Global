@@ -3138,7 +3138,7 @@ function startCinematicRotation() {
   autoRotateTimer = d3.timer(() => {
     if (!isRotating || currentMode !== '3d') return;
     const rotate = projection.rotate();
-    projection.rotate([rotate[0] + 0.04, rotate[1], rotate[2]]);
+    projection.rotate([rotate[0] - 0.04, rotate[1], rotate[2]]);
     rotationState = [-projection.rotate()[0], -projection.rotate()[1], projection.rotate()[2]];
     updateProjection();
   });
