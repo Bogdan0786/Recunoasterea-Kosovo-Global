@@ -888,33 +888,21 @@ window.addEventListener('unhandledrejection', function(event) {
     box-shadow: inset 0 0 40px rgba(0,0,0,0.4);
   }
 
-  /* Palestine flag styled banner background */
+  /* Kosovo flag styled banner background */
+  .premium-banner {
+    background: #244AA5 !important;
+  }
   .premium-banner::before {
-    content: '';
+    content: '🇽🇰';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 33.3%;
-    background: #000000;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 52px;
     z-index: 1;
+    opacity: 0.25;
   }
-  .premium-banner-mid {
-    position: absolute;
-    top: 33.3%; left: 0; width: 100%; height: 33.4%;
-    background: #ffffff;
-    z-index: 1;
-  }
-  .premium-banner-bottom {
-    position: absolute;
-    top: 66.7%; left: 0; width: 100%; height: 33.3%;
-    background: #10b981;
-    z-index: 1;
-  }
-  .premium-banner-triangle {
-    position: absolute;
-    top: 0; left: 0; width: 0; height: 0;
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent;
-    border-left: 60px solid #ef4444;
-    z-index: 2;
+  .premium-banner-mid, .premium-banner-bottom, .premium-banner-triangle {
+    display: none;
   }
 
   .premium-banner-text {
@@ -1129,7 +1117,7 @@ window.addEventListener('unhandledrejection', function(event) {
 <section class="filters">
   <span class="filter-label">Filtrează după poziție</span>
   <button class="chip active" data-filter="all">Toate statele</button>
-  <button class="chip" data-filter="rec" data-cat="rec"><span class="dot"></span>Recunosc Palestina</button>
+  <button class="chip" data-filter="rec" data-cat="rec"><span class="dot"></span>Recunosc Kosovo</button>
   <button class="chip" data-filter="norec" data-cat="norec"><span class="dot"></span>Nu recunosc</button>
   <button class="chip" data-filter="contested" data-cat="contested"><span class="dot"></span>Contestat / Înghețat</button>
 </section>
@@ -3423,14 +3411,14 @@ function selectTerritory(id) {
   }
 
   const badgeMap = {
-    'Recunoaște Palestina': 'rec',
+    'Recunoaște Kosovo': 'rec',
     'Nu recunoaște': 'norec',
     'Recunoaște (Contestat)': 'contested'
   };
 
   const recognitionText = t.categorie === 'rec' 
-    ? `Recunoaște oficial Statul Palestina din anul <strong>${t.zee}</strong>.` 
-    : (t.categorie === 'contested' ? `A recunoscut Palestina în <strong>${t.zee}</strong>, însă această recunoaștere este contestată sau ignorată în prezent.` : 'Nu recunoaște formal în prezent Statul Palestina.');
+    ? `Recunoaște oficial Statul Kosovo din anul <strong>${t.zee}</strong>.` 
+    : (t.categorie === 'contested' ? `A recunoscut Kosovo în <strong>${t.zee}</strong>, însă această recunoaștere este contestată sau ignorată în prezent.` : 'Nu recunoaște formal în prezent Statul Kosovo.');
 
   panelContent.innerHTML = `
     <div class="territory-detail">
